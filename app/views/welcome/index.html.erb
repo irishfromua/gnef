@@ -1,0 +1,23 @@
+<h1>Добро пожаловать в Гнеф.рф</h1>
+<p>После регистрации Вы можете опубликовать гневное обращение или несколько, указав тему, подробное описание, и контакты стороны, повлекшей гнев.</p>
+<table>
+  <tr>
+    <th>Автор</th>
+    <th>Тема</th>
+    <th>Описание</th>
+    <th>Контакты стороны, повлекшей гнев</th>
+  </tr>
+  <% @appeals.each do |a| %>
+    <tr>
+      <td><%= a.user_id %></td>
+      <td><%= a.title %></td>
+      <td><%= a.description %></td>
+      <td><%= a.contact %></td>
+<!--
+      <td><%= link_to 'Show', appeal_path(a) %></td>
+      <td><%= link_to 'Edit', edit_appeal_path(a) %></td>
+      <td><%= link_to 'Destroy', appeal_path(a), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-->
+    </tr>
+  <% end %>
+</table>

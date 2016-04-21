@@ -1,0 +1,18 @@
+<%= link_to 'Добавить новое', new_appeal_path %>
+<table>
+  <tr>
+    <th>Тема</th>
+    <th>Подробности</th>
+    <th>Контакты</th>
+  </tr>
+  <% @appeals.each do |a| %>
+    <tr>
+      <td><%= a.title %></td>
+      <td><%= a.description %></td>
+      <td><%= a.contact %></td>
+      <td><%= link_to 'Показать', appeal_path(a) %></td>
+      <td><%= link_to 'Редактировать', edit_appeal_path(a) %></td>
+      <td><%= link_to 'Удалить', appeal_path(a), method: :delete, data: { confirm: 'Вы уверенны?' } %></td>
+    </tr>
+  <% end %>
+</table>
